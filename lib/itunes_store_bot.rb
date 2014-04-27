@@ -67,7 +67,11 @@ class AppStoreBot
     if response.code != '200'
       puts "App Store store website communication (status-code: #{response.code})\n#{response.body}"
     else
-      @app_data['last_version'] = extract_app_data_from_raw_json( response.body )
+      data = extract_app_data_from_raw_json( response.body )
+      if data[:error]
+        puts "Application requested couldn't be found [#{data[:error]}]"
+      end
+      @app_data['last_version'] = data
       #puts "#{@app_data['last_version']}"
     end
 
@@ -77,7 +81,11 @@ class AppStoreBot
     if response2.code != '200'
       puts "App Store store website communication (status-code: #{response2.code})\n#{response2.body}"
     else
-      @app_data['all_versions'] = extract_app_data_from_raw_json( response2.body )
+      data = extract_app_data_from_raw_json( response2.body )
+      if data[:error]
+        puts "Application requested couldn't be found [#{data[:error]}]"
+      end
+      @app_data['all_versions'] = data
       #puts "#{@app_data['all_versions']}"
     end
 
@@ -85,7 +93,7 @@ class AppStoreBot
 
   def extract_app_data_from_raw_json(data)
     raw_app_data = JSON.parse( data )
-    set_itunes_review_url_path( raw_app_data['userReviewsRowUrl'] )
+    set_itunes_review_url_path( raw_app_data['userReviewsRowUrl'] || nil ) unless raw_app_data['error']
     parsed_app_data = {
       :ratingCount => raw_app_data['ratingCount'] || 0,
       :ratingAverage => raw_app_data['ratingAverage'] || 0.0,
@@ -93,11 +101,21 @@ class AppStoreBot
       :numberOfReviews => raw_app_data['totalNumberOfReviews'] || 0,
       :reviews => []
     }
+
+    if raw_app_data['error']
+      parsed_app_data[:error] = raw_app_data['error']
+    end
+
+    parsed_app_data
   end
 
   def set_itunes_review_url_path(url)
-    index = url.index(@itunes_domain_url)
-    @itunes_reviews_url = url[index, url.length].sub! @itunes_domain_url, ""
+    if url
+      index = url.index(@itunes_domain_url)
+      @itunes_reviews_url = url[index, url.length].sub! @itunes_domain_url, ""
+    else
+      puts 'Please provide a valid URL string.'
+    end
   end
 
   def get_reviews(version='last_version', sort_type='1')
