@@ -13,4 +13,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.homepage      = 'http://rubygems.org/gems/itunes_store_bot'
   s.license       = 'MIT'
+
+  s.add_dependency('http', '>= 0.5.0')
+  s.add_dependency('json', '>= 1.8.0')
 end
