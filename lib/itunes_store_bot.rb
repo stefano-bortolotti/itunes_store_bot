@@ -97,7 +97,7 @@ class AppStoreBot
 
   def set_itunes_review_url_path(url)
     index = url.index(@itunes_domain_url)
-    @itunes_reviews_url = url[index, url.length].gsub! @itunes_domain_url, ""
+    @itunes_reviews_url = url[index, url.length].sub! @itunes_domain_url, ""
   end
 
   def get_reviews(version='last_version', sort_type='1')
