@@ -1,0 +1,44 @@
+// URL https://itunes.apple.com/gb/customer-reviews/id576939960?dataOnly=true&displayable-kind=11
+// Host: itunes.apple.com
+// X-Apple-Store-Front: 143444,17
+// Accept-Encoding: gzip, deflate
+// Accept-Language: en-us, en;q=0.50
+// Accept: */*
+// User-Agent: iTunes/11.1.5 (Macintosh; OS X 10.9.2) AppleWebKit/537.74.9
+// Connection: keep-alive
+// Referer: https://itunes.apple.com/gb/app/minigore-2-zombies/id576939960?mt=8
+// X-Dsid: 107225448
+// Cookie: itsMetricsR=Search-GB@@Media%20Search%20Pages@@Tab_allResults%7CSwoosh_1%7CLockup_1@@; mz_user_info_version=0; X-JS-SP-TOKEN=ShFFJg7tbLc73quBpXRx9A==; X-JS-TIMESTAMP=1398522586; dssid2=8c2b3fbc-280c-40e1-8ffa-e62cd445996c; itspod=16; mz_at0-107225448=AwQAAAEBAAGuGAAAAABTDGLhY26IOIbXt7Dsyv9cBKkMPiF3XZQ=; mz_at_ssl-107225448=AwUAAAEBAAGuGAAAAABTDGLh9z+4LJ4qMCzdE4BpGWpJVIufa8c=; ns-mzf-inst=35-139-80-104-92-8186-162518-16-nk11; Pod=16; pxro=1; s_fid=66291422B54414F6-23C1CAE2F51BB888; s_vi=[CS]v1|2937EB8085010821-60000101E0001D80[CE]; s_vnum_n2_us=3|12,97|1,0|1; X-Dsid=107225448; xp_ci=3zra8w6zCCqz5KIzAfBz1A0JaXYPl
+// X-Apple-Tz: 3600
+// Pragma: no-cache
+// Cache-Control: no-cache
+
+
+{
+	"adamId": 576939960,
+	"totalNumberOfReviews": 189,
+	"writeUserReviewUrl": "https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/writeUserReview?cc=gb&displayable-kind=11&id=576939960",
+	"clickToRateUrl": "https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/userRateContent?displayable-kind=11&id=576939960",
+	"userReviewsRowUrl": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/userReviewsRow",
+	"userReviewsSortOptions": [{
+		"sortId": 1,
+		"name": "Most Helpful"
+	}, {
+		"sortId": 2,
+		"name": "Most Favorable"
+	}, {
+		"sortId": 3,
+		"name": "Most Critical"
+	}, {
+		"sortId": 4,
+		"name": "Most Recent"
+	}],
+	"kindId": 11,
+	"kindExtId": "iosSoftware",
+	"kindName": "software",
+	"saveUserReviewUrl": "https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/saveUserReview?displayable-kind=11",
+	"ratingAverage": 4.25494000000000038852476791362278163433074951171875,
+	"ratingCount": 506,
+	"ariaLabelForRatings": "4 and a half stars",
+	"ratingCountList": [48, 23, 28, 60, 347]
+}
